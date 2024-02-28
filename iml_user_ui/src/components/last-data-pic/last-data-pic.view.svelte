@@ -11,8 +11,15 @@
     const itemsArray = await dataset.items().take(dataset.length).toArray();
     if (itemsArray.length > 0) {
       lastInstance = itemsArray[itemsArray.length - 1];
+      console.log(lastInstance);
     }
   }
+
+  let user = { review: false };
+  function review() {
+		user.review = !user.review;
+    console.log("review clicked")
+	}
 
   onMount(() => {
     initialize();
@@ -23,7 +30,11 @@
   <div class="container">
     {#if lastInstance}
       <div class="item">
-        <img src={lastInstance.thumbnail} alt="" />
+        <div class="thumbnail-container">
+          <img src={lastInstance.thumbnail} alt="" />
+        </div>
+        <p><b>Prediction from the model:</b> {lastInstance.y}</p>
+        <button on:click={review}> Review </button>
       </div>
     {:else}
       <p>No data available</p>
@@ -40,7 +51,14 @@
   .item {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-left: 15px;
+  }
+  .thumbnail-container {
+    max-width: 200px; 
+    max-height: 200px; 
+    overflow: hidden; 
   }
 
   .label {
