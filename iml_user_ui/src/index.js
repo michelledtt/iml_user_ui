@@ -1,13 +1,25 @@
 import '@marcellejs/core/dist/marcelle.css';
-import { dashboard, text } from '@marcellejs/core';
+import { dataStore, wizard, dataset, datasetTable } from '@marcellejs/core';
+import { lastDataPic } from './components';
 
-const x = text('Welcome to Marcelle!');
+const store = dataStore(
+	'https://marcelle.lisn.upsaclay.fr/iml2024/api'
+  );
+try {
+	await store.connect();
+} catch (error) {
+	await store.loginWithUI();
+}
 
-const dash = dashboard({
-	title: 'My Marcelle App!',
-	author: 'Marcelle Doe'
-});
+const wizarduser = wizard();
 
-dash.page('Welcome').use(x);
+const trainingSet = dataset('project-images', store);
+const last_input = lastDataPic(trainingSet)
 
-dash.show();
+wizarduser
+	.page()
+	.title("Track your mood")
+	.description("Review your last entry")
+	.use(last_input)
+
+wizarduser.show()
