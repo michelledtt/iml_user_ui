@@ -4,12 +4,15 @@
   export let title;
   export let dataset;
 
-  let someItems = [];
-async function initialize() {
-  await dataset.ready;
-  someItems = await dataset.items().take(1).toArray();
-  console.log(someItems);
-}
+  let lastInstance = null;
+
+  async function initialize() {
+    await dataset.ready;
+    const itemsArray = await dataset.items().take(dataset.length).toArray();
+    if (itemsArray.length > 0) {
+      lastInstance = itemsArray[itemsArray.length - 1];
+    }
+  }
 
   onMount(() => {
     initialize();
@@ -18,11 +21,13 @@ async function initialize() {
 
 <ViewContainer {title}>
   <div class="container">
-    {#each someItems as instance}
+    {#if lastInstance}
       <div class="item">
-        <img src={instance.thumbnail} alt="" />
+        <img src={lastInstance.thumbnail} alt="" />
       </div>
-    {/each}
+    {:else}
+      <p>No data available</p>
+    {/if}
   </div>
 </ViewContainer>
 
