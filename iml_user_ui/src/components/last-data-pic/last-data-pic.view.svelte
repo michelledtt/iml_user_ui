@@ -15,12 +15,6 @@
     }
   }
 
-  let user = { review: false };
-  function review() {
-		user.review = !user.review;
-    console.log("review clicked")
-	}
-
   onMount(() => {
     initialize();
   });
@@ -28,17 +22,16 @@
 
 <ViewContainer {title}>
   <div class="container">
+    <div class="item">
     {#if lastInstance}
-      <div class="item">
         <div class="thumbnail-container">
           <img src={lastInstance.thumbnail} alt="" />
         </div>
         <p><b>Prediction from the model:</b> {lastInstance.y}</p>
-        <button on:click={review}> Review </button>
-      </div>
     {:else}
-      <p>No data available</p>
+      <span>Loading...</span>
     {/if}
+  </div>
   </div>
 </ViewContainer>
 
@@ -53,7 +46,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 15px;
+    margin-left: 250px;
+    margin-right: 250px;
   }
   .thumbnail-container {
     max-width: 200px; 
@@ -61,9 +55,8 @@
     overflow: hidden; 
   }
 
-  .label {
-    text-align: center;
-    background-color: cornflowerblue;
-    color: white;
+  span{
+    margin-top: 5px;
+    width: 150px;
   }
 </style>
