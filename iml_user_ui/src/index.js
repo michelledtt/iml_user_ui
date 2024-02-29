@@ -30,4 +30,6 @@ wizarduser
 	.title("Good job tracking your mood!")
 	.description("Tracking your mood can help you identify patterns, and help you understand why certain mood changes occur. Come back tomorrow to review your mood!")
 
-wizarduser.show()
+	document.querySelector('#open-wizard').addEventListener('click', () => {
+		wizarduser.show();
+	  });

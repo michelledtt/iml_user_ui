@@ -6,8 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <script defer type="module" src="/src/index.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      .phone {
+        position: relative;
+        background-color: #333;
+        border-radius: 50px;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .screen {
+        background-color: #fff;
+        border-radius: 50px;
+        padding: 20px;
+        height: 400px;
+      }
+
+      /* Adjust the size of the phone and screen as needed */
+      .phone img {
+        width: 300px; /* Adjust this to match the width of your phone image */
+        height: auto; /* This allows the image to scale proportionally */
+      }
+
+      .screen {
+        width: 85%;
+        height: 95%;
+        overflow: auto;
+      }
+
+      /* Additional styles for the button */
+      .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+    </style>
   </head>
   <body>
+    <div class="container">
+      <div class="phone">
+        <img src="iml_user_ui/src/components/phone_screen.png">
+        <div class="screen">
+          <!-- Your app content goes here -->
+          <h1>Welcome to Your App</h1>
+          <p>This is your app content.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn" id="open-wizard">Track your mood</button>
     <noscript>
       <strong>
         We're sorry but this application doesn't work properly without JavaScript enabled. Please
@@ -16,4 +90,4 @@
     </noscript>
     <div id="app"></div>
   </body>
-  </html>
+</html>
