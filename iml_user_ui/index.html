@@ -28,60 +28,102 @@
 
       .phone {
         position: relative;
-        background-color: #333;
-        border-radius: 50px;
-        padding: 30px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        width: 400px;
+      }
+
+      .phone img {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        /*z-index: 2;*/
       }
 
       .screen {
-        background-color: #fff;
         border-radius: 50px;
         padding: 20px;
         height: 400px;
-      }
-
-      /* Adjust the size of the phone and screen as needed */
-      .phone img {
-        width: 300px; /* Adjust this to match the width of your phone image */
-        height: auto; /* This allows the image to scale proportionally */
-      }
-
-      .screen {
-        width: 85%;
-        height: 95%;
-        overflow: auto;
+        /*z-index: 1;*/
+        position: absolute;
+        top: 30px;
+        left: 61px;
+        width: 56%;
+        height: 83%;
+        background-image: linear-gradient(to bottom right, #93ccb9, #ceede3); /* Adjust this to match the background color of your app */
+        border-radius: 35px;
+        padding: 20px;
       }
 
       /* Additional styles for the button */
       .btn {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #4CAF50; /* Green */
+        padding: 30px 40px;
+        font-size: 20px;
+        font-family: 'Gill Sans', sans-serif;
+        background-color: #ceede3b1
+        ; /* Green */
         border: none;
-        color: white;
-        border-radius: 5px;
+        color: black;
+        border-radius: 15px;
         cursor: pointer;
+        margin-top: 10px;
       }
 
       .btn:hover {
-        background-color: #45a049;
+        background-color: #93ccb9;
+      }
+
+      h1 {
+        font-size: 22px;
+        font-family: 'Lucida Grande', sans-serif;
+        text-align: center;
+      }
+
+      .week-overview {
+        position: relative; /* To position the title relative to the container */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #ceede3b1; /* Green */
+        color: black;
+        border-radius: 15px;
+        padding: 10px;
+        font-size: 16px; /* Adjust font size of emojis */
+        font-family: 'Gill Sans', sans-serif;
+        margin-top: 10px;
+      }
+
+      .week-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+      }
+      .weekdays {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 15px; /* Adjust font size of weekdays if needed */
       }
     </style>
   </head>
+
   <body>
     <div class="container">
       <div class="phone">
-        <img src="iml_user_ui/src/components/phone_screen.png">
+        <img src="https://github.com/michelledtt/iml_user_ui/blob/2a5aff68c4d99f9ad2eb8cf6ced898d8f1f9d791/iml_user_ui/src/components/phone_screen.png?raw=true">
         <div class="screen">
-          <!-- Your app content goes here -->
-          <h1>Welcome to Your App</h1>
-          <p>This is your app content.</p>
+          <!-- App content-->
+          <h1>Welcome Chris!</h1>
+          <button class="btn" id="open-wizard">Track your mood</button>
+          <div class="week-overview">
+            <div class="week-title">Your Week</div>
+            😊 😊 😢 😡 😢 😡 😊
+            <div class="weekdays">Mon  Tue  Wed  Thu  Fri  Sat  Sun</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <button class="btn" id="open-wizard">Track your mood</button>
+   
     <noscript>
       <strong>
         We're sorry but this application doesn't work properly without JavaScript enabled. Please
