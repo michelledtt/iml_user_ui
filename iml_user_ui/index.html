@@ -36,20 +36,18 @@
         width: 100%;
         height: auto;
         position: relative;
-        /*z-index: 2;*/
       }
 
       .screen {
         border-radius: 50px;
         padding: 20px;
         height: 400px;
-        /*z-index: 1;*/
         position: absolute;
         top: 30px;
         left: 61px;
         width: 56%;
         height: 83%;
-        background-image: linear-gradient(to bottom right, #93ccb9, #ceede3); /* Adjust this to match the background color of your app */
+        background-image: linear-gradient(to bottom right, #3D669D, #9EBFEC); /* Adjust this to match the background color of your app */
         border-radius: 35px;
         padding: 20px;
       }
@@ -59,23 +57,23 @@
         padding: 30px 40px;
         font-size: 20px;
         font-family: 'Gill Sans', sans-serif;
-        background-color: #ceede3b1
+        background-color: #9ebeecb0
         ; /* Green */
         border: none;
-        color: #1b392f;
+        color: #032350;
         border-radius: 15px;
         cursor: pointer;
       }
 
       .btn:hover {
-        background-color: #93ccb9;
+        background-color: #CBE1FF;
       }
 
       h1 {
         font-size: 22px;
         font-family: 'Canela Deck', sans-serif;
         text-align: center;
-        color: #1b392f;
+        color: #032350;
       }
 
       .week-overview {
@@ -84,8 +82,8 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background-color: #ceede3b1; /* Green */
-        color: #1b392f;
+        background-color: #9ebeecb0; 
+        color: #032350;
         border-radius: 15px;
         padding: 10px;
         font-size: 16px; /* Adjust font size of emojis */
@@ -103,7 +101,7 @@
         margin-top: 5px;
         margin-bottom: 15px;
         font-size: 15px; /* Adjust font size of weekdays if needed */
-        color: #1b392f;
+        color: #032350;
       }
     </style>
   </head>
@@ -121,7 +119,9 @@
             😊 😊 😢 😡 😢 😡 😊
             <div class="weekdays">Mon  Tue  Wed  Thu  Fri  Sat  Sun</div>
           </div>
-          <img src="https://github.com/michelledtt/iml_user_ui/blob/452fb987a9a4c74e3eebcf81c35c41657a2981eb/iml_user_ui/src/components/Mood%20graph%20component.png?raw=true">
+          <div class="week-overview">
+            <div class="week-title">Your Month</div>
+          </div>
         </div>
       </div>
     </div>
