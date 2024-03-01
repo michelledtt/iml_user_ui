@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Marcelle Example</title>
+    <title>Team E: MoodSense</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <script defer type="module" src="/src/index.js"></script>
     <style>
+      /* CSS style sheet for the html. defines the style for the phone, screen, button, and tabs into which info visualizations are added */
       body {
         margin: 0;
         padding: 0;
@@ -73,7 +74,7 @@
         color: #032350;
       }
 
-      .week-overview {
+      .tab {
         position: relative; 
         display: flex;
         flex-direction: column;
@@ -89,7 +90,7 @@
         margin-bottom: 10px;
       }
 
-      .week-title {
+      .tab-title {
         font-size: 20px;
         margin-bottom: 5px;
       }
@@ -103,20 +104,25 @@
   </head>
 
   <body>
+    <!-- Creates illusion of a phone-->
     <div class="container">
       <div class="phone">
         <img src="https://github.com/michelledtt/iml_user_ui/blob/2a5aff68c4d99f9ad2eb8cf6ced898d8f1f9d791/iml_user_ui/src/components/phone_screen.png?raw=true">
         <div class="screen">
           <!-- App content-->
           <h1>MoodSense</h1>
+          <!--Mood tracker button-->
           <button class="btn" id="open-wizard">✍️ Track your mood</button>
-          <div class="week-overview">
-            <div class="week-title">Your Week</div>
+          <!-- Tab with weekly overview-->
+          <div class="tab">
+            <div class="tab-title">Your Week</div>
             😊 😊 😢 😡 😢 😡 😊
             <div class="weekdays">Mon  Tue  Wed  Thu  Fri  Sat  Sun</div>
           </div>
-          <div class="week-overview">
-            <div class="week-title">Your Month</div>
+          <!-- Tab with monthly overview-->
+          <div class="tab">
+            <div class="tab-title">Your Month</div>
+            <!-- Due to time constraints, created a data vis graph with figma-->
             <img src="https://github.com/michelledtt/iml_user_ui/blob/main/iml_user_ui/src/components/Monthly%20Mood%20Chart.png?raw=true">
           </div>
         </div>

@@ -2,6 +2,7 @@ import '@marcellejs/core/dist/marcelle.css';
 import { dataStore, wizard, dataset, datasetTable } from '@marcellejs/core';
 import { lastDataPic, reviewMood } from './components';
 
+//Connect to our database
 const store = dataStore(
 	'https://marcelle.lisn.upsaclay.fr/iml2024/api'
   );
@@ -13,10 +14,14 @@ try {
 
 const wizarduser = wizard();
 
+//fetch the trainingsets for the custom components
 const trainingSet = dataset('project-images', store);
+//create the custom components for the wizard. LastInput shows the last added entry in the data set, and the label
 const last_input = lastDataPic(trainingSet);
+//Review mood shows the last entry of the dataset and allows the user to change the label. It additionally allows them to add a description, which is not tied to anything yet
 const review_mood = reviewMood(trainingSet);
 
+//create the wizard UI
 wizarduser
 	.page()
 	.title("Track your mood")
